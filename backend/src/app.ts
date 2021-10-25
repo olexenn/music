@@ -7,6 +7,7 @@ import { UserController } from "./controllers/UserController";
 useContainer(Container);
 createConnection().then(() => {
   const expressApp = createExpressServer({
+    cors: true,
     controllers: [UserController],
   });
 

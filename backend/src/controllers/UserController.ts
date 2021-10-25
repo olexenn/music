@@ -1,5 +1,5 @@
-import { Body, JsonController, Post, Res } from 'routing-controllers';
-import { Response } from 'express';
+import { Body, JsonController, Post, Req, Res } from 'routing-controllers';
+import { Response, Request } from 'express';
 import { Service } from 'typedi';
 import { getConnection } from 'typeorm';
 import * as argon from 'argon2';
@@ -58,6 +58,7 @@ export class UserController {
 
   @Post("/login")
   async login(@Res() res: Response, @Body() data: User) {
+      console.log("here")
     if (!data.password || (!data.email && !data.username))
       return res.status(403).json({ msg: "Some fields are empty" });
 

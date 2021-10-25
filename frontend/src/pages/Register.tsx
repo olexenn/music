@@ -1,8 +1,15 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
+import axios from "axios";
 import Input from "../components/Input";
 import Button from "../components/Button";
 
+type Token = {
+  token: string;
+};
+
 const Register = () => {
+  const [status, setStatus] = React.useState(false);
   const [username, setUsername] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
@@ -14,7 +21,30 @@ const Register = () => {
       alert("Passwords do not match");
       return;
     }
+
+    const url = "http://localhost:3001/auth/register";
+    const payload = {
+      email: email,
+      username: username,
+      password: password,
+    };
+
+    axios
+      .post<Token>(url, payload)
+      .then((response) => {
+        console.log(response);
+        localStorage.setItem("user", response.data.token);
+        return setStatus(true);
+      })
+      .catch((err: Error) => {
+        console.error(err);
+      });
   };
+
+  if (status || localStorage.getItem("user")) {
+    return <Redirect to="/" />;
+  }
+
   return (
     <React.Fragment>
       <form onSubmit={handleSubmit}>
