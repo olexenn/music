@@ -20,8 +20,21 @@ form h3 {
 }
 
 form * {
-  /* color: #ffffff; */
   letter-spacing: 0.5px;
   outline: none;
   border: none;
+}
+
+.cont {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.link:hover {
+  text-decoration: underline;
 }

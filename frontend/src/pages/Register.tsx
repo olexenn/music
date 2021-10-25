@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import axios from "axios";
 import Input from "../components/Input";
 import Button from "../components/Button";
@@ -82,6 +82,11 @@ const Register = () => {
           }}
         />
         <Button type="submit" title="Register" />
+        <div className="cont">
+          <Link to="/login" className="link">
+            Or If You Have An Account LogIn
+          </Link>
+        </div>
       </form>
     </React.Fragment>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import axios from "axios";
 import "../css/form.css";
 import Input from "../components/Input";
@@ -18,6 +18,7 @@ const Login = () => {
     e.preventDefault();
 
     let payload: Object;
+    // eslint-disable-next-line
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(login)) {
       payload = {
         email: login,
@@ -70,8 +71,12 @@ const Login = () => {
             placeholder="Password"
           />
         </div>
-        {/* <button type="submit">Login</button> */}
         <Button type="submit" title="Login" />
+        <div className="cont">
+          <Link to="/register" className="link">
+            Or Create An Account
+          </Link>
+        </div>
       </form>
     </div>
   );
