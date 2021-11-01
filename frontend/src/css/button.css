@@ -4,7 +4,8 @@ button {
   height: 50px;
   font-size: 18px;
   font-weight: 600;
-  background: rgba(255, 255, 255, 0.15);
+  /* background: rgba(255, 255, 255, 0.28); */
+  background-color: #aff6cf;
   border: none;
   outline: none;
   cursor: pointer;
@@ -16,7 +17,7 @@ button:hover {
 }
 
 button:active {
-  background-color: #fc575e;
+  /* background-color: #fc575e; */
   background-size: 100%;
   transition: background 0.1s;
 }

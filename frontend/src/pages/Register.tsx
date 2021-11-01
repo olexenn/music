@@ -83,9 +83,12 @@ const Register = () => {
         />
         <Button type="submit" title="Register" />
         <div className="cont">
-          <Link to="/login" className="link">
-            Or If You Have An Account LogIn
-          </Link>
+          <p>
+            Already Registered?
+            <Link to="/login" className="link">
+              SignIn
+            </Link>
+          </p>
         </div>
       </form>
     </React.Fragment>
