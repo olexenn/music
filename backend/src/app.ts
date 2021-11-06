@@ -34,7 +34,7 @@ createConnection().then(() => {
     },
   });
 
-  expressApp.listen(config.port);
+  expressApp.listen(3001);
 
-  console.log(`Server is running on http://localhost:${config.port}/`);
+  console.log(`Server is running on http://localhost:${3001}/`);
 });
