@@ -46,10 +46,10 @@ export class TrackController {
    * @returns tracks
    */
   @Authorized()
-  @Get("/tracks")
+  @Get("/")
   async getTracks(@Res() res: Response) {
     const tracks = await this._trackService.getTracks();
-    return res.json({ tracks: tracks });
+    return res.json(tracks);
   }
 
   /**

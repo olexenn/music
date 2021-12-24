@@ -4,11 +4,8 @@ import {
   Column,
   ManyToOne,
   OneToMany,
-  ManyToMany,
-  JoinTable,
 } from "typeorm";
 import { Like } from "./Like";
-import { Playlist } from "./Playlist";
 import { User } from "./User";
 
 @Entity({ name: "tracks" })

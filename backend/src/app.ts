@@ -2,9 +2,9 @@ import "reflect-metadata";
 import { createExpressServer, useContainer, Action } from "routing-controllers";
 import { Container } from "typedi";
 import { createConnection } from "typeorm";
+import * as express from "express";
 import * as path from "path";
 import { UserService } from "./services/UserService";
-import { config } from "./config";
 
 useContainer(Container);
 createConnection().then(() => {
@@ -34,6 +34,7 @@ createConnection().then(() => {
     },
   });
 
+  expressApp.use(express.static(__dirname + "/static"));
   expressApp.listen(3001);
 
   console.log(`Server is running on http://localhost:${3001}/`);
